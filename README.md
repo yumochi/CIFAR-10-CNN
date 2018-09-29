@@ -3,70 +3,100 @@
 Just a simple 8 layer CNN developed to work on CIFAR-10. The code is inspired by pytorch mnist tutorial, ie https://github.com/pytorch/examples/blob/master/mnist/main.py as well as work from CS598 D from UIUC, which is a 
 Deep Learning course I am taking.
 
+Just a fun little project to show case some basic concepts like max pooling, batch normalization, and drop out.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To get started on the project is very easy, just
+
+```
+git clone git@github.com:yumochi/CIFAR-10-CNN.git
+```
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To run the code you will need the following:
+
+# Python
+
+(Refer to https://www.python.org/downloads/)
+
+# Pytorch 
 
 ```
-Give examples
+# Python 3.x
+pip3 install torch torchvision
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
 ```
-Give the example
+# Python 2.x`
+pip install torch torchvision
 ```
 
-And repeat
+(Refer to https://pytorch.org/get-started/locally/ for more info.)
+
+
+
+# Torchvision
 
 ```
-until finished
+pip install torchvision
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+(Refer to https://pypi.org/project/torchvision/0.1.8/ )
+
+# h5py (Not necessary)
+
+```
+pip install h5py
+```
+
+h5py was originally used to import image data, but the code is adopted to use Torchvision
+
+Comment out code if not needed
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+# To run the code, just run
 
 ```
-Give an example
+python main.py
+```
+# Set parameters with argparser
+
+For a list of terminal commands for the argparser, refer to texts below or check in hw3.py for all parameters
+
+# Set batch-size with --batch-size x
+
+x has to be an integer
+
+```
+python hw3.py --batch-size 16
 ```
 
-### And coding style tests
+# Set epoch number with --epochs x
 
-Explain what these tests test and why
+x has to be an integer
 
 ```
-Give an example
+python hw3.py --epochs 30
 ```
 
-## Deployment
+# Set learning rate with --lr x
 
-Add additional notes about how to deploy this on a live system
+x has to be an float
 
-## Built With
+```
+python hw3.py --lr 0.0001
+```
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+# Set sample number in monte carlo approximation with --mck x
 
-## Contributing
+x has to be an integer
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+```
+python hw3.py --mck 16
+```
 
 ## Versioning
 
@@ -74,16 +104,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Yumo Chi** - *Initial work* - [CIFAR-10-CNN](https://github.com/yumochi/CIFAR-10-CNN)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Pytorch Developers
+* UIUC CS598D's professor and tas.
